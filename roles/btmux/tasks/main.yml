@@ -1,0 +1,6 @@
+---
+# file: roles/btmux/tasks/main.yml
+
+- include: install_dependencies.yml
+- include: checkout_and_compile.yml
+- include: install_upstart_unit.yml

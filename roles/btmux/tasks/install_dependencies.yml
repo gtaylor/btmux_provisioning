@@ -1,0 +1,12 @@
+---
+# file: roles/btmux/tasks/install_dependencies.yml
+
+- name: install common packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - libevent-dev
+    - build-essential
+    - autoconf
+    - automake
+    - libdbi-dev
+    - libdbd-mysql

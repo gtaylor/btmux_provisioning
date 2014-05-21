@@ -1,0 +1,16 @@
+---
+# file: roles/btmux/tasks/install_upstart_unit.yml
+
+- name: copy upstart unit
+  template: >
+    src=etc/init/btmux.conf
+    dest=/etc/init/btmux.conf
+    owner=root group=root mode=0644
+  sudo: True
+
+- name: Reload | init
+  command: initctl reload-configuration
+  sudo: True
+
+- service: name=btmux state=started enabled=yes
+  sudo: True

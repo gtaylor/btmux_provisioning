@@ -1,0 +1,11 @@
+---
+# file: developer.yml
+
+- hosts: developer
+  sudo: True
+  roles:
+    - bootstrap
+
+- hosts: developer
+  roles:
+    - btmux

@@ -1,0 +1,8 @@
+---
+# file: roles/bootstrap/tasks/main.yml
+
+- name: run dist-upgrade
+  apt: upgrade=dist
+  when: run_dist_upgrade
+
+- include: misc_packages.yml

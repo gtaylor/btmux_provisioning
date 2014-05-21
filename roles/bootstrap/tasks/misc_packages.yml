@@ -1,0 +1,11 @@
+---
+# file: roles/bootstrap/tasks/misc_packages.yml
+
+- name: install common packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - ntp
+    - vim
+    - telnet
+    - git
+    - tf5

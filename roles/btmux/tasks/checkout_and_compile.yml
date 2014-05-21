@@ -1,0 +1,22 @@
+---
+# file: roles/btmux/tasks/checkout_and_compile.yml
+
+- name: checking out btmux, branch {{ git_repo_version }}
+  git: >
+    repo={{ git_repo }}
+    dest={{ btmux_codebase_path }}
+    update=no
+    accept_hostkey=yes
+    version={{ git_repo_version }}
+
+- name: configure btmux
+  shell: >
+    ./configure
+    chdir={{ btmux_codebase_path }}
+    creates=config.status
+
+- name: make btmux
+  shell: >
+    make install
+    chdir={{ btmux_codebase_path }}
+    creates=game.run

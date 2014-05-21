@@ -1,0 +1,16 @@
+---
+# file: roles/btmux/defaults/main.yml
+
+# The branch or commit hash to clone from the git repo.
+git_repo_version: master
+# The repo to clone from. If this is a dev fork, make sure you use git+ssh.
+git_repo: https://github.com/gtaylor/btmux.git
+# The user to install btmux within
+btmux_user: vagrant
+# Absolute or relative path to clone the codebase to.
+btmux_codebase_path: "/home/{{ btmux_user }}/btmux"
+btmux_game_path: "{{ btmux_codebase_path }}/game.run"
+btmux_game_bin_path: "{{ btmux_game_path}}/bin"
+btmux_game_logs_path: "{{ btmux_game_path}}/logs"
+btmux_game_data_path: "{{ btmux_game_path}}/data"
+btmux_game_text_path: "{{ btmux_game_path}}/text"
