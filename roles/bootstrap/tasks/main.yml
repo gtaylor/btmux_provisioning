@@ -1,6 +1,10 @@
 ---
 # file: roles/bootstrap/tasks/main.yml
 
+# Update repositories cache and install "foo" package
+- name: update apt cache
+  apt: update_cache=yes
+
 - name: run dist-upgrade
   apt: upgrade=dist
   when: run_dist_upgrade

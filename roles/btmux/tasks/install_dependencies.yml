@@ -10,3 +10,4 @@
     - automake
     - libdbi-dev
     - libdbd-mysql
+  sudo: True
