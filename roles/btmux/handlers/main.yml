@@ -1,0 +1,6 @@
+---
+# file: roles/btmux/handlers/main.yml
+
+- name: restart btmux
+  service: name=btmux state=restarted
+  sudo: True

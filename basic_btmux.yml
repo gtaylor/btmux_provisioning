@@ -1,5 +1,5 @@
 ---
-# file: developer.yml
+# file: basic_btmux.yml
 
 - hosts: developer
   sudo: True

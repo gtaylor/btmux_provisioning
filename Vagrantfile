@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.provision "ansible" do |ansible|
         #ansible.verbose = "vvvv"
-        ansible.playbook = "developer.yml"
+        ansible.playbook = "basic_btmux.yml"
         ansible.host_key_checking = false
         ansible.groups = {
           "developer" => ["default"],

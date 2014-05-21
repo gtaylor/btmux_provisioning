@@ -7,10 +7,11 @@
     dest=/etc/init/btmux.conf
     owner=root group=root mode=0644
   sudo: True
+  notify: restart btmux
 
 - name: Reload | init
   command: initctl reload-configuration
   sudo: True
 
-- service: name=btmux state=started enabled=yes
+- service: name=btmux enabled=yes
   sudo: True
